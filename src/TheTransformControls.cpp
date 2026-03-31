@@ -168,13 +168,6 @@ bool TheTransformControls::performSnap(bool test) {
 		log::warn("HELP! EditorUI missing");
 		return false;
 	}
-	#undef m_fields
-	if (!editor->m_fields->transformActive) {
-		log::debug("HELP! attempted to snap but transform isnt active. what the hell man");
-		return false;
-	}
-	#define m_fields this->m_fields
-	// if any index mod reads this, please lmk how to avoid this #define stuff because this feels very unclean ...
 
 
 

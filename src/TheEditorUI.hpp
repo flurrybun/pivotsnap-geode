@@ -10,24 +10,12 @@ class TheTransformControls;
 struct TheEditorUI : Modify<TheEditorUI, EditorUI> {
 public:
 	struct Fields {
-		CCMenuItemSpriteExtra* snapBtn = nullptr;
-		TheTransformControls* pivotsnap = nullptr;
-
-		bool firstInitialized = false;
-		bool transformActive = false;
+		CCMenuItemSpriteExtra* snapBtn;
 	};
-
-	void enabler();
 
 	$override
 	bool init(LevelEditorLayer* lel);
 	
 	void onSnapBtn(CCObject* sender);
-
-	$override
-	void activateTransformControl(CCObject* sender);
-
-	$override
-	void deactivateTransformControl();
-
+	void updateSnapBtn(float dt);
 };
